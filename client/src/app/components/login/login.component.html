@@ -1,0 +1,17 @@
+
+<!-- <div class="background_image">
+  <img src="/assets/men1.png">
+</div> -->
+
+<div class="page_content white_box">
+  <form [formGroup]="loginForm">
+
+    <input formControlName="username" type="text" placeholder="Username" autofocus [(ngModel)]="username">
+
+    <input formControlName="password" type="text" placeholder="Password" autofocus type="password" [(ngModel)]="password">
+
+    <button (click)="login(username, password)" type="submit">
+      Submit
+    </button>
+  </form>
+</div>

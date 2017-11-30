@@ -1,0 +1,9 @@
+.background {
+    background-image: url("/assets/Row_of_men_at_the_New_York_City_docks_out_of_work_during_the_depression,_1934_-_NARA_-_518288.jpeg");
+    /* Full height */
+    height: 50%; 
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

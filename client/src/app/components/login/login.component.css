@@ -1,0 +1,21 @@
+.white_box {
+    background-color:   white;
+    top:                100px;
+    padding-left:       5%;
+    padding-top:        50px;
+    padding-bottom:     50px;
+    margin-left:        10%;
+    margin-right:       10%;
+    margin-bottom:      10%;
+    border-radius:      10px;
+    box-shadow:         15px 15px 10px;
+    z-index:            2;
+}
+
+.background_image{
+    position:   fixed;
+    width:      100vh;
+    height:     100vh;
+    background-position: center;
+    z-index:    1;
+}

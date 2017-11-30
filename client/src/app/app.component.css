@@ -1,0 +1,37 @@
+.app_wrapper {
+    width: 100%;
+    height: 100%;
+    padding:0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+.ap {
+    background-image: url('/assets/men.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100vw;
+    height: 100vh;
+    /* position: fixed; */
+    /* z-index: 0; */
+  }
+
+/* .background_image{
+    position:   fixed;
+    width:      100vw;
+    min-height: 1000px;
+    height:     100vh; 
+    background-repeat: no-repeat;
+    background-size: 100vw;
+    background-position: top;
+    z-index:    1;
+} */
+
+/* .background_image{
+    position:   fixed;
+    background-size: 100%;
+    height:     100vh;
+    width:      100vw;
+    background-position: top;
+    background-repeat: no-repeat;
+    z-index:    1;
+} */

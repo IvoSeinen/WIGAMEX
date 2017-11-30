@@ -1,0 +1,26 @@
+.slds-global-header {
+    height: 70px;
+}
+
+.slds-global-header__item {
+    font-size: 23px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color:black;
+    cursor: pointer;
+    margin: 20 20 20 20;
+    padding: 20 20 20 20;
+    /* box-shadow: 1px -1px 10px #000000; */
+}
+
+.header {
+    float: left;
+}
+
+.login {
+    float: right;
+}
+  
+.register {
+    float: right;
+}
