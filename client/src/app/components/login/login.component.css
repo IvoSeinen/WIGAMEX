@@ -19,3 +19,8 @@
     background-position: center;
     z-index:    1;
 }
+
+.errormessage {
+    color: red;
+    font-weight: bold;
+}
