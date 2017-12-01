@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+import { BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 export interface LoginResponse {
   success: boolean;

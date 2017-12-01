@@ -5,17 +5,21 @@ const bcrypt = require('bcrypt');
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
+    _id: {              // EMAIL IS UNIQUE ID.
+        type: String,
+        required: true
+    },
     username: {
         type: String,
         required: true
     },
-    email: {
+    password: {
         type: String,
         required: true
     },
     city: {
         type: String,
-        required: true
+        default: 'Utrecht'
     },
     created: {
         type: Date,
@@ -23,10 +27,7 @@ const UserSchema = new Schema({
     }
 });
 
-UserSchema.methods.comparePassword = function(password) {
-    return bcrypt.compareSync(password, this.hash_password);
-};
-
-mongoose.model('User', UserSchema);
+const User = mongoose.model('test', UserSchema);
+module.exports = User;
 
 

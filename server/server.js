@@ -12,6 +12,7 @@ const user = require('./models/userModel');
 
 const api = require('./routes/api');
 const login = require('./routes/login');
+const register = require('./routes/register');
 
 const app = express();
 const port = process.env.PORT || '3000';
@@ -43,5 +44,6 @@ app.use(function (req, res, next) {
 
 app.use('/api', api);
 app.use('/login', login);
+app.use('/register', register);
 
 server.listen(port, () => console.log(`API running on localhost:${port}`));

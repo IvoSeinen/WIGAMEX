@@ -12,6 +12,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { BackgroundComponent } from './components/background/background.component';
 import { AuthenticationService } from './services/authentication.service';
 import { Http, Response, Headers} from '@angular/http';
+import { RegisterService } from 'app/services/register.service';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { Http, Response, Headers} from '@angular/http';
   ],
   providers: [
     AuthenticationService,
+    RegisterService
   ],
   bootstrap: [AppComponent]
 })
