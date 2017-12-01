@@ -13,6 +13,7 @@ import { BackgroundComponent } from './components/background/background.componen
 import { AuthenticationService } from './services/authentication.service';
 import { Http, Response, Headers} from '@angular/http';
 import { RegisterService } from 'app/services/register.service';
+import { SuccesRegistrationComponent } from './components/succes-registration/succes-registration.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { RegisterService } from 'app/services/register.service';
     ProfileComponent,
     HeaderComponent,
     BackgroundComponent,
+    SuccesRegistrationComponent,
   ],
   imports: [
     BrowserModule,

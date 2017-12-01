@@ -47,8 +47,9 @@ export class RegisterComponent implements OnInit {
         if (res.success) {
           this.serverResponse = 'You have been registered successfully';
           console.log(this.serverResponse);
+          this.router.navigate(['./registered']);
         } else {
-          this.serverResponse = 'Your email has already been registered';
+          this.serverResponse = 'This email is already in use';
           console.log(this.serverResponse);
         }
       })

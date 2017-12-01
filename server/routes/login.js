@@ -1,7 +1,9 @@
 const express = require('express');
 const authenticateController = require('../controllers/authenticateController');
-const router = express.Router();
 const jwt = require('jsonwebtoken');
+const mongoose = require('mongoose');
+const User = require('../models/userModel');
+const router = express.Router();
 
 router.post('/', function (req, res) {
     if (!req.body.username && !req.body.password) {
@@ -20,14 +22,34 @@ router.post('/', function (req, res) {
             message: "no password provided"
         })
     } else {
-        // const token = authenticateController.createToken();
-        // console.log('token: ' + token);
-        res.send({
-            success: true,
-            message: "both a pass and username provided"
-        })
+        User.findOne({
+            username: req.body.username
+        }, function (err, user) {
+            if (err) {
+                throw err;
+            } else if (!user) {
+                res.json({
+                    succes: false,
+                    message: 'Authentication failed. User not found.'
+                });
+            } else if (user) {
+                if (user.password !== req.body.password) {
+                    res.json({
+                        succes: false,
+                        message: 'Authentication failed. Wrong password.'
+                    });
+                } else {
+                    return res.json({
+                        succes: true,
+                        message: 'username & password match',
+                        token: jwt.sign({
+                            username: user.username
+                        }, 'RESTFULAPIs')
+                    });
+                }
+            }
+        });
     }
 })
-
 
 module.exports = router;

@@ -27,7 +27,11 @@ const UserSchema = new Schema({
     }
 });
 
-const User = mongoose.model('test', UserSchema);
+UserSchema.methods.comparePassword = function(password) {
+    return bcrypt.compareSync(password, this.hash_password);
+  };
+
+const User = mongoose.model('realUser', UserSchema);
 module.exports = User;
 
 
