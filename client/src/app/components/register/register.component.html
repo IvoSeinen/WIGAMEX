@@ -6,7 +6,7 @@
   <div class="page_content white_box">
     <form [formGroup]=registerForm>
 
-        <input class=""
+        <input class="form-control"
         formControlName="username"
         type="text"
         placeholder="username"
@@ -14,7 +14,7 @@
         required
         [(ngModel)]="username">
 
-        <input class=""
+        <input class="form-control"
         formControlName="email"
         type="email"
         placeholder="email"
@@ -22,7 +22,7 @@
         required
         [(ngModel)]="email">
 
-        <div formArrayName="passwords" class="">
+        <div formArrayName="passwords" class="form-control">
             <input class="form-control"
                    formControlName="password"
                    type="password"
@@ -32,18 +32,44 @@
                    [(ngModel)]="password">
         </div>
 
-        <div formArrayName="passwords" class="">
-        <input class="form-control"
-        formControlName="passwordConfirm"
-        type="password"
-        placeholder="Confirm password"
-        autofocus
-        required
-        [(ngModel)]="passwordConfirm">
+        <div formArrayName="passwords" class="form-control">
+            <input  class="form-control"
+                    formControlName="passwordConfirm"
+                    type="password"
+                    placeholder="Confirm password"
+                    autofocus
+                    required
+                    [(ngModel)]="passwordConfirm">
+        </div>
+
+        <div  class="errormessage"
+              *ngIf="!registerForm.controls['username'].valid && registerForm.controls['username'].touched">
+              Please enter your username.
+        </div>
+
+        <div  class="errormessage"
+              *ngIf="!registerForm.controls['email'].valid && registerForm.controls['email'].touched">
+              Please enter your email address.
+        </div>
+
+        <div  class="errormessage"
+              *ngIf="!registerForm.controls.passwords.controls['password'].valid && registerForm.controls.passwords.controls['password'].touched">
+              Password is required.
+        </div>
+
+        <div  class="errormessage"
+              *ngIf="!registerForm.controls.passwords.controls['passwordConfirm'].valid && registerForm.controls.passwords.controls['passwordConfirm'].touched">
+              Please confirm your password.
+        </div>
+
+        <div  class="errormessage"
+              *ngIf="registerForm.hasError('nomatch', 'passwords') && registerForm.controls.passwords.controls['passwordConfirm'].touched">
+              Passwords must match.
         </div>
 
         <button (click)="register()"
-        type="submit">
+        type="submit"
+        [disabled]="!registerForm.valid">
         Register
         </button>
 

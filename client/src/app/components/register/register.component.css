@@ -2,6 +2,8 @@
     background-color:   white;
     top:                100px;
     padding-left:       5%;
+    padding-top:        50px;
+    padding-bottom:     50px;
     margin-left:        10%;
     margin-right:       10%;
     margin-bottom:      10%;
@@ -12,5 +14,13 @@
 
 .background_image{
     position:   fixed;
+    width:      100vh;
+    height:     100vh;
+    background-position: center;
     z-index:    1;
+}
+
+.errormessage {
+    color: red;
+    font-weight: bold;
 }

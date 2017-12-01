@@ -14,14 +14,14 @@ export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
   public errormessage = '';
 
-  constructor(private router: Router,
-              private authenticationService: AuthenticationService,
-              private formBuilder: FormBuilder) {
-                this.loginForm = formBuilder.group({
-                'username': [null],
-                'password': [null],
-                });
-  }
+  public constructor( private router: Router,
+                      private authenticationService: AuthenticationService,
+                      private formBuilder: FormBuilder) {
+                        this.loginForm = formBuilder.group({
+                        'username': [null, Validators.required],
+                        'password': [null, Validators.compose([Validators.required])],
+  });
+}
 
   ngOnInit() {
   }

@@ -22,8 +22,19 @@
             type="password" 
             [(ngModel)]="password">
 
+    <div    class="errormessage"
+            *ngIf="!loginForm.controls['username'].valid && loginForm.controls['username'].touched">
+            Please enter your username
+    </div>
+
+    <div    class="errormessage"
+            *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched">
+            Please enter your password
+    </div>
+
     <button (click)="login(username, password)" 
-            type="submit">
+            type="submit"
+            [disabled]="!loginForm.valid">
             Submit
     </button>
     <div    class="errormessage">
