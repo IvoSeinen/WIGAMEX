@@ -1,5 +1,7 @@
 const express = require('express');
+const authenticateController = require('../controllers/authenticateController');
 const router = express.Router();
+const jwt = require('jsonwebtoken');
 
 router.post('/', function (req, res) {
     if (!req.body.username && !req.body.password) {
@@ -18,6 +20,8 @@ router.post('/', function (req, res) {
             message: "no password provided"
         })
     } else {
+        // const token = authenticateController.createToken();
+        // console.log('token: ' + token);
         res.send({
             success: true,
             message: "both a pass and username provided"

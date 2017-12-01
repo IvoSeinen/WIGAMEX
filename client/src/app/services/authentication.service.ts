@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 export interface LoginResponse {
   success: boolean;
   message: string;
-  poep: string;
+  token: string;
 }
 
 @Injectable()
@@ -14,7 +15,8 @@ export class AuthenticationService {
     'Content-Type': 'application/json',
     'token': localStorage.getItem('token')},
   );
-  private logStatus: boolean;
+  private loginBehaviorSubject          = new BehaviorSubject<boolean>(false);
+  public logStatus: Observable<boolean> = this.loginBehaviorSubject.asObservable();
 
   constructor(private http: Http) {
   }
@@ -25,9 +27,10 @@ export class AuthenticationService {
       .then((res: Response) => {
         const myResponse: LoginResponse = res.json();
         if (myResponse.success) {
-          this.logStatus = true;
+          this.setLogStatus(true);
+          console.log(myResponse.token);
         } else {
-          this.logStatus = false;
+          this.setLogStatus(false);
         }
         return myResponse;
       })
@@ -36,5 +39,13 @@ export class AuthenticationService {
 
   private handleError(error: any): Promise<any> {
     return Promise.reject(error.message || error);
+  }
+
+  public setLogStatus(value: boolean) {
+    this.loginBehaviorSubject.next(value);
+  }
+
+  public getLogStatus(): boolean {
+    return this.loginBehaviorSubject.getValue();
   }
 }
