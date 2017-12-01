@@ -4,15 +4,49 @@
 
 <!-- <div class="slds-grid slds-wrap slds-align--absolute-center html"> -->
   <div class="page_content white_box">
-    <div>
-      <p>
-        register works!
-      </p>
-      <br>
-      <br> nefijwbnfj
-      <br>
-      <br> fnweinfoe
-      <br>
-    </div>
+    <form [formGroup]=registerForm>
+
+        <input class=""
+        formControlName="username"
+        type="text"
+        placeholder="username"
+        autofocus
+        required
+        [(ngModel)]="username">
+
+        <input class=""
+        formControlName="email"
+        type="email"
+        placeholder="email"
+        autofocus
+        required
+        [(ngModel)]="email">
+
+        <div formArrayName="passwords" class="">
+            <input class="form-control"
+                   formControlName="password"
+                   type="password"
+                   placeholder="Password"
+                   autofocus
+                   required
+                   [(ngModel)]="password">
+        </div>
+
+        <div formArrayName="passwords" class="">
+        <input class="form-control"
+        formControlName="passwordConfirm"
+        type="password"
+        placeholder="Confirm password"
+        autofocus
+        required
+        [(ngModel)]="passwordConfirm">
+        </div>
+
+        <button (click)="register()"
+        type="submit">
+        Register
+        </button>
+
+    </form>
   </div>
 <!-- </div> -->
