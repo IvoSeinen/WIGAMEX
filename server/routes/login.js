@@ -43,6 +43,9 @@ router.post('/', function (req, res) {
                         success: true,
                         message: 'username & password match',
                         username: user.username,
+                        city: user.city,
+                        cash: user.cash,
+                        bankBalance: user.bankBalance,
                         token: jwt.sign({
                             username: user.username
                         }, 'RESTFULAPIs')

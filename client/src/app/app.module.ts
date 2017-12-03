@@ -11,6 +11,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BackgroundComponent } from './components/background/background.component';
 import { AuthenticationService } from './services/authentication.service';
+import { GetPlayerDataService } from './services/get-player-data.service';
 import { Http, Response, Headers} from '@angular/http';
 import { RegisterService } from 'app/services/register.service';
 import { SuccesRegistrationComponent } from './components/succes-registration/succes-registration.component';
@@ -37,6 +38,7 @@ import { AuthGuard } from './guards/authGuard';
   ],
   providers: [
     AuthenticationService,
+    GetPlayerDataService,
     RegisterService,
     AuthGuard
   ],

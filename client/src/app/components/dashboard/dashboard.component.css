@@ -4,16 +4,17 @@
     padding-left:       5%;
     padding-top:        50px;
     padding-bottom:     50px;
-    margin-left:        10%;
-    margin-right:       10%;
-    margin-bottom:      10%;
+    margin-left:        15%;
+    margin-right:       15%;
+    margin-bottom:      15%;
     border-radius:      10px;
-    box-shadow:         15px 15px 10px;
+    box-shadow:         15px 15px 5px;
+    font-weight:        bold;
     z-index:            2;
 }
 
 .inner_box {
-    background-color:   rgb(238, 162, 162);
+    background-color:   rgb(197, 197, 197);
     position:           relative;
     padding-left:       5%;
     padding-top:        10px;
@@ -23,7 +24,8 @@
     margin-right:       10%;
     margin-bottom:      2%;
     border-radius:      10px;
-    box-shadow:         15px 15px 10px;
+    box-shadow:         7px 7px 5px;
+    font-weight:        bold;
     z-index:            2;
 }
 

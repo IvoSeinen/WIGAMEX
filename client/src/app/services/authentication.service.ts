@@ -10,6 +10,9 @@ export interface LoginResponse {
   message: string;
   token: string;
   username: string;
+  city: string;
+  cash: number;
+  bankBalance: number;
 }
 @Injectable()
 export class AuthenticationService {
@@ -21,6 +24,8 @@ export class AuthenticationService {
   public actionUrl: string;
   public token: string;
   public username: string;
+  public bankBalance: number;
+  public cash: number;
   private TOKEN_KEY                     = 'token';
   private USER_KEY                      = 'username';
   public loginBehaviorSubject          = new BehaviorSubject<boolean>(false);
@@ -43,6 +48,7 @@ export class AuthenticationService {
           localStorage.setItem(this.TOKEN_KEY, myResponse.token);
           localStorage.setItem(this.USER_KEY, myResponse.username);
           this.setLogStatus(true);
+          this.handlePlayerData(myResponse);
           return myResponse;
         } else {
           return myResponse;
@@ -83,6 +89,16 @@ export class AuthenticationService {
   public getUsername(): string {
     const user = localStorage.getItem(this.USER_KEY);
     return user ? user : null;
+  }
+
+  public handlePlayerData(myResponse) {
+    this.username = myResponse.username;
+    this.cash = myResponse.cash;
+    this.bankBalance = myResponse.bankBalance;
+  }
+
+  public getCash() {
+    return this.cash;
   }
 }
 
