@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.authenticationService.logStatus.subscribe(value => {
       if (value) {
-        this.welcomeMessage = this.authenticationService.getUsername();
+        this.welcomeMessage = 'Dashboard: ' + this.authenticationService.getUsername();
       } else {
         this.welcomeMessage = '';
       }
@@ -36,6 +36,10 @@ export class HeaderComponent implements OnInit {
 
   public goToRegisterPage() {
     this.router.navigate(['./register']);
+  }
+
+  public goToDashboardPage() {
+    this.router.navigate(['./dashboard']);
   }
 
   public logout() {

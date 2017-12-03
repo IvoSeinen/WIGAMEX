@@ -15,6 +15,7 @@ import { Http, Response, Headers} from '@angular/http';
 import { RegisterService } from 'app/services/register.service';
 import { SuccesRegistrationComponent } from './components/succes-registration/succes-registration.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AuthGuard } from './guards/authGuard';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
   ],
   providers: [
     AuthenticationService,
-    RegisterService
+    RegisterService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

@@ -5,19 +5,19 @@
       HEADER
     </button>
 
-    <button class="login slds-global-header__item slds-button" (click)="logout()">
+    <button *ngIf="isLoggedIn()"class="login slds-global-header__item slds-button" (click)="logout()">
         LOGOUT
     </button>
 
-    <button class="login slds-global-header__item slds-button" (click)="goToLoginPage()">
+    <button *ngIf="!isLoggedIn()" class="login slds-global-header__item slds-button" (click)="goToLoginPage()">
         LOGIN
     </button>
 
-    <div class="login slds-global-header__item slds-button">
+    <div *ngIf="isLoggedIn()"class="login slds-global-header__item slds-button" (click)="goToDashboardPage()">
         {{welcomeMessage}}
     </div>
 
-    <button class="register slds-global-header__item slds-button" (click)="goToRegisterPage()">
+    <button *ngIf="!isLoggedIn()" class="register slds-global-header__item slds-button" (click)="goToRegisterPage()">
       REGISTER
     </button>
 
