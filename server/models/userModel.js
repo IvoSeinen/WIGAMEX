@@ -17,9 +17,37 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
+    confirmed: {
+        type: Boolean,
+        default: false
+    },
     city: {
         type: String,
         default: 'Utrecht'
+    },
+    hitpoints: {
+        type: Number,
+        default: 100
+    },
+    skill_charisma: {
+        type: Number,
+        default: 0
+    },
+    skill_X: {
+        type: Number,
+        default: 0
+    },
+    skill_Y: {
+        type: Number,
+        default: 0
+    },
+    cash: {
+        type: Number,
+        default: 0
+    },
+    bank_balance: {
+        type: Number,
+        default: 0
     },
     created: {
         type: Date,

@@ -29,19 +29,20 @@ router.post('/', function (req, res) {
                 throw err;
             } else if (!user) {
                 res.json({
-                    succes: false,
+                    success: false,
                     message: 'Authentication failed. User not found.'
                 });
             } else if (user) {
                 if (user.password !== req.body.password) {
                     res.json({
-                        succes: false,
+                        success: false,
                         message: 'Authentication failed. Wrong password.'
                     });
                 } else {
                     return res.json({
-                        succes: true,
+                        success: true,
                         message: 'username & password match',
+                        username: user.username,
                         token: jwt.sign({
                             username: user.username
                         }, 'RESTFULAPIs')

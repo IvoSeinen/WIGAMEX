@@ -14,6 +14,7 @@ import { AuthenticationService } from './services/authentication.service';
 import { Http, Response, Headers} from '@angular/http';
 import { RegisterService } from 'app/services/register.service';
 import { SuccesRegistrationComponent } from './components/succes-registration/succes-registration.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { SuccesRegistrationComponent } from './components/succes-registration/su
     HeaderComponent,
     BackgroundComponent,
     SuccesRegistrationComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

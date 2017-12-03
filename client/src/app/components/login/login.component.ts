@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
         if (res.success) {
           this.errormessage = res.message;
           console.log(this.errormessage);
-          this.router.navigate(['/home']);
+          this.router.navigate(['/dashboard']);
         } else {
           this.errormessage = res.message;
           console.log(this.errormessage);
