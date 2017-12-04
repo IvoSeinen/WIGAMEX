@@ -42,4 +42,11 @@ export class DashboardComponent implements OnInit {
         }
       });
   }
+
+  public addCash(username: string) {
+    this.getPlayerDataService.getPlayerData(username)
+      .subscribe(myResponse => {
+        
+      });
+  }
 }

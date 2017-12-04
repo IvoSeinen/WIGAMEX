@@ -1,14 +1,17 @@
 <div class="page_content white_box">
-  Welcome to your dashboard, {{username}}
-  <div class="inner_box">
-      Cash: {{cash}} <br>
-      Bank Balance: {{bankBalance}} <br>
-      city: {{city}} <br>
-  </div>
-  <div class="inner_box">
-      Welcome to your dashboard, {{username}}
-  </div>
-  <div class="inner_box">
-      Welcome to your dashboard, {{username}}
-  </div>
+    Welcome to your dashboard, {{username}}
+    <div class="inner_box">
+        Cash: {{cash}}
+        <br> Bank Balance: {{bankBalance}}
+        <br> city: {{city}}
+        <br>
+    </div>
+    <div class="inner_box">
+        <div (click)="addCash()">
+            Add 10
+        </div>
+    </div>
+    <div class="inner_box">
+        Welcome to your dashboard, {{username}}
+    </div>
 </div>

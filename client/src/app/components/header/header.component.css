@@ -2,6 +2,28 @@
     height: 70px;
 }
 
+.footer {
+    height: 40px;
+}
+
+.footer__item1 {
+    font-family: sans-serif;
+    font-weight: bold;
+    color:black;
+    left: 10%;
+    float: left;
+    text-align: left;
+}
+
+.footer__item2 {
+    font-family: sans-serif;
+    font-weight: bold;
+    color:black;
+    right: 10%;
+    float: right;
+    text-align: right;
+}
+
 .slds-global-header__item {
     font-size: 23px;
     font-family: sans-serif;
