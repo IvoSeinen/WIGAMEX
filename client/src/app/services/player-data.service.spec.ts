@@ -1,9 +1,9 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { GetPlayerDataService } from './get-player-data.service';
+import { PlayerDataService } from './player-data.service';
 
-describe('GetPlayerDataService', () => {
+describe('PlayerDataService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [GetPlayerDataService]

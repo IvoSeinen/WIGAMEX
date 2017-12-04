@@ -16,7 +16,7 @@ export interface ServerResponse {
 }
 
 @Injectable()
-export class GetPlayerDataService {
+export class PlayerDataService {
 
   constructor(public http: Http) {
 
@@ -26,12 +26,18 @@ export class GetPlayerDataService {
     return this.http.post('http://localhost:3000/PlayerData', {username: username})
       .map((response: Response) => {
         const myResponse: ServerResponse = response.json();
-        console.log('get playerdata myResponse: ' , myResponse);
         if (myResponse.success) {
           return myResponse;
         } else {
           return myResponse;
         }
       }).catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+  }
+
+  public updatePlayerData(username: string): Observable<any> {
+    return this.http.put('http://localhost:3000/PlayerData', {username: username})
+      .map((response: Response) => {
+
+      });
   }
 }

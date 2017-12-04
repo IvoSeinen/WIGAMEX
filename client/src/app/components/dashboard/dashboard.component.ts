@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'app/services/authentication.service';
-import { GetPlayerDataService } from 'app/services/get-player-data.service';
+import { PlayerDataService } from 'app/services/player-data.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,7 +16,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(private router: Router,
     private authenticationService: AuthenticationService,
-    private getPlayerDataService: GetPlayerDataService) {
+    private PlayerDataService: PlayerDataService) {
   }
 
   ngOnInit() {
@@ -31,7 +31,7 @@ export class DashboardComponent implements OnInit {
   }
 
   public getPlayerData(username: string) {
-    this.getPlayerDataService.getPlayerData(username)
+    this.PlayerDataService.getPlayerData(username)
       .subscribe(myResponse => {
         if (myResponse.success) {
           this.cash = myResponse.cash;
@@ -44,9 +44,9 @@ export class DashboardComponent implements OnInit {
   }
 
   public addCash(username: string) {
-    this.getPlayerDataService.getPlayerData(username)
+    this.PlayerDataService.updatePlayerData(username)
       .subscribe(myResponse => {
-        
+
       });
   }
 }
